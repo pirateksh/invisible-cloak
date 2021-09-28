@@ -19,3 +19,6 @@ This is a simple yet very intriguing project made by Image Processing using Open
 * Clone the repository - `git clone https://github.com/pirateksh/invisible-cloak.git`
 * Change directory to invisible-cloak `cd invisible-cloak`
 * Run `python stream.py`
+
+## Mentor
+* [Kshitiz Srivastava](https://contrihub21.herokuapp.com/profile/user/pirateksh/)
