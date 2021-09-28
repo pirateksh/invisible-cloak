@@ -14,3 +14,8 @@ This is a simple yet very intriguing project made by Image Processing using Open
 * It is then processed and all occurance of eariler chosen color (red) is replaced by the initial background image which we have captured earlier.
 * For this a HSV/HSB range is defined  which is to be replaced. For red colour, Hue(H) = 0 - 10 and 170 - 180, Saturation(S) = 120 - 255 and Brightness(B) = 70 - 255.
 
+## How to run?
+
+* Clone the repository - `git clone https://github.com/pirateksh/invisible-cloak.git`
+* Change directory to invisible-cloak `cd invisible-cloak`
+* Run `python stream.py`
