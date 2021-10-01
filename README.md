@@ -20,5 +20,5 @@ This is a simple yet very intriguing project made by Image Processing using Open
 * Change directory to invisible-cloak `cd invisible-cloak`
 * Run `python stream.py`
 
-## Mentor(s)
+## Mentor
 * [Kshitiz Srivastava](https://contrihub21.herokuapp.com/profile/user/pirateksh/)
