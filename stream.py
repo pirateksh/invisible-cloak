@@ -28,7 +28,6 @@ def get_arguments():
 
 
 def invisible_cloak():
-
     args = get_arguments()
     """
         Creating a video capture object
@@ -132,12 +131,12 @@ def invisible_cloak():
             first_lower_red = np.array(HSV_Ranges[args['color']][0][0])
             # Upper Limit of H, S and B
             first_upper_red = np.array(HSV_Ranges[args['color']][0][1])
-            mask1 = cv.inRange(hsv, second_lower_red, second_upper_red)
+            mask1 = cv.inRange(hsv, first_lower_red, first_upper_red)
 
             # Repeating with 170-180 degree
             second_lower_red = np.array(HSV_Ranges[args['color']][1][0])
             second_upper_red = np.array(HSV_Ranges[args['color']][1][1])
-            mask2 = cv.inRange(hsv, first_lower_red, first_upper_red)
+            mask2 = cv.inRange(hsv, second_lower_red, second_upper_red)
 
             # Overloading + operator for Bitwise OR.
             mask1 = mask1 + mask2
