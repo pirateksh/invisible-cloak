@@ -206,7 +206,7 @@ def play_music():
     Funtion to play Harry Potter Theme Song in background
     """
     mixer.init()
-    mixer.music.load('harry_potter_theme.mp3')
+    mixer.music.load('harry_potter_theme.ogg')
     mixer.music.play(-1)
 
 
