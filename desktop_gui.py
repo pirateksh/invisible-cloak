@@ -4,6 +4,7 @@ import cv2 as cv
 import numpy as np
 from tkinter import ttk
 import time
+from pygame import mixer
 
 HSV_Ranges = {'red': [[[0, 120, 70], [10, 255, 255]], [[161, 155, 84], [179, 255, 255]]],
               'blue': [[94, 80, 2], [126, 255, 255]],
@@ -23,15 +24,19 @@ def startcam():
     """
     Funtion that is called when start camera button is pressed
     """
-
     # Getting the selected option of color from Combobox
     cloak_color = color.get()
 
-    # Creating a frame for webcam video input to be shown as a tkinter window
+    # Changing Labels and disabling the dropdown
+    color.configure(state='disabled')
+    new_text = f"Current color is {cloak_color}"
+    list_options.config(text=new_text)
+
     f1 = LabelFrame(root, bg="black")
     f1.pack(pady=5)
     L1 = Label(f1, bg="black")
     L1.pack()
+    count = 10
 
     # Changing the configuration of the start button to perform stop camera function
     startbtn.configure(text="Stop Camera", command=stopcam)
@@ -196,6 +201,15 @@ def startcam():
         root.update()
 
 
+def play_music():
+    """
+    Funtion to play Harry Potter Theme Song in background
+    """
+    mixer.init()
+    mixer.music.load('harry_potter_theme.mp3')
+    mixer.music.play(-1)
+
+
 if __name__ == '__main__':
     """
         Creating a video capture object
@@ -211,16 +225,20 @@ if __name__ == '__main__':
 
     # Initializing tkinker window with given geometry
     root = Tk()
-    root.geometry("700x660")
+    root.geometry("1006x660")
     root.title('Invisibilty Cloak Application')
+
+    # Placing Harry potter image in the background of the window
+    bg = ImageTk.PhotoImage(Image.open("background.jpg"))
+    Label(root, image=bg).place(x=0, y=0)
 
     # label text for title of the Application
     Label(root, text="Invisible Cloak", font=(
-        "Times New Roman", 30, "bold"), fg="black").pack()
-
+        "Times New Roman", 30, "bold"), bg="brown", fg="black").pack(pady=10)
     # label text for the dropdown box
-    Label(root, text="Select the desired color to hide :",
-          font=("Times New Roman", 15)).pack(pady=5)
+    list_options = Label(root, text="Select the desired color to hide :",
+                         font=("Times New Roman", 15))
+    list_options.pack(pady=5)
 
     """
     Combobox is a combination of Listbox and an entry field. It is one of the Tkinter widgets where it contains a down arrow 
@@ -244,5 +262,7 @@ if __name__ == '__main__':
     startbtn = Button(root, text="Start Camera", font=(
         "Times New Roman", 12, "bold"), bg="gray", fg="black", command=startcam)
     startbtn.pack(pady=5)
+
+    play_music()
     root.protocol("WM_DELETE_WINDOW", stopcam)
     root.mainloop()
