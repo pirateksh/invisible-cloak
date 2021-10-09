@@ -207,7 +207,7 @@ if __name__ == '__main__':
         This object just specifies the video OR which webcam
         will be used to record video(this doesn't start camera).
     """
-    cap = cv.VideoCapture(0, cv.CAP_DSHOW)
+    cap = cv.VideoCapture(0)
 
     # Initializing tkinker window with given geometry
     root = Tk()
