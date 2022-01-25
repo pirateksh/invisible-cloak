@@ -38,5 +38,3 @@ For Green colour, Hue(H) = 25 - 102, Saturation(S) = 52 - 255 and Brightness(B) 
 
 ## Screenshot
 ![Screenshot](gui_app_demo.jpg "Title is optional")
-## Mentor(s)
-* [Kshitiz Srivastava](https://contrihub21.herokuapp.com/profile/user/pirateksh/)
